@@ -1,6 +1,16 @@
 # Deployment：无状态
 
 ## 功能
+1. Deployment管理Replicaset, Replicaset管理Pod
+
+[deployment-structure](./kubernetes_learning/asset/资源调度/deployment/deployment_structure.png)
+
+2. Deployment支持Replicaset的所有功能
+   - 重启或重建pod
+   - 扩容或缩容pod
+   - 镜像版本的升级
+3. Deployment支持滚动升级和回滚版本
+4. Deployment支持发布的停止、继续
 
 ### 创建
 
