@@ -3,7 +3,7 @@
 ## 功能
 1. Deployment管理Replicaset, Replicaset管理Pod
 
-![deployment structure](../asset/资源调度/deployment/deployment_structure.jpg)
+![deployment structure](../asset/资源调度/deployment/deployment_structure.png)
 
 2. Deployment支持Replicaset的所有功能
    - 重启或重建pod
@@ -26,7 +26,21 @@ kubectl create deploy nginx-deploy -n dev --image=nginx:1.27.0
 kubectl create -f nginx-deployment.yaml
 ```
 
-[nginx-deployment.yaml](./kubernetes_learning/yaml/深度调度/deployment/nginx-deployment.yaml)
+[nginx-deployment.yaml](../yaml/深度调度/deployment/nginx-deployment.yaml)
+
+#### 结果
+
+1. kubectl get deploy -n dev
+   - UP-TO-DATE：当前版本的Pod数量
+   - AVAILABLE：可用的Pod数量
+2. kubectl get rs -n dev
+   - RS的名称：deployment的名称-10位随机字符串
+   - DESIRED：期望的Pod数量
+   - CURRENT：当前的Pod数量
+   - READY：可用的Pod数量
+
+![create_deployment](../asset/资源调度/deployment/create_deployment.png)
+
 
 ### 扩容缩容
 
