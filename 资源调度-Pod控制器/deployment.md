@@ -5,6 +5,9 @@
 
 ![deployment structure](../asset/资源调度/deployment/deployment_structure.png)
 
+
+![deployment structure_test](../asset/aaa/create_deployment.png)
+
 2. Deployment支持Replicaset的所有功能
    - 重启或重建pod
    - 扩容或缩容pod
