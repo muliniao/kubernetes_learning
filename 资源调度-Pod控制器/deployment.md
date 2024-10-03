@@ -28,7 +28,7 @@ kubectl create -f nginx-deployment.yaml
 
 [nginx-deployment.yaml](../yaml/深度调度/deployment/nginx-deployment.yaml)
 
-#### 结果
+#### 创建的结果
 
 1. kubectl get deploy -n dev
    - UP-TO-DATE：当前版本的Pod数量
@@ -41,12 +41,15 @@ kubectl create -f nginx-deployment.yaml
 
 ![create deployment](../asset/资源调度/deployment/create_deployment.png)
 
-
 ### 扩容缩容
 
 ```shell
 kubectl scale deploy nginx-deploy --replicas=3 -n dev
 ```
+
+#### 扩容缩容的结果
+
+![scale deployment](../asset/资源调度/deployment/scale_deployment.png)
 
 ### 镜像更新
 ```yaml
@@ -67,8 +70,15 @@ strategy：指定新的Pod替换旧的Pod的策略， 支持两个属性：
 #### 滚动更新
 1. kubectl edit deploy nginx-deploy -n dev
 2. 修改spec.template.spec.containers.image
-3. 流程
-4. 
+3. 查看RS, 发现新生成一个RS, 但原先RS依旧存在，只是pod数为0
+
+##### 滚动更新的过程
+   
+![rolling_update_deployment1](../asset/资源调度/deployment/rolling_update_deployment1.png)
+
+##### 滚动更新的结果
+
+![rolling_update_deployment1](../asset/资源调度/deployment/rolling_update_deployment1.png)
 
 
 ### 回滚
