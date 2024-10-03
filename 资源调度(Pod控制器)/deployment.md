@@ -3,7 +3,7 @@
 ## 功能
 1. Deployment管理Replicaset, Replicaset管理Pod
 
-![deployment structure](../asset/资源调度/deployment/deployment_structure.png)
+![deployment structure](../asset/资源调度/deployment/deployment_structure.jpg)
 
 2. Deployment支持Replicaset的所有功能
    - 重启或重建pod
