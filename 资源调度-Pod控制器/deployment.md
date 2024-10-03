@@ -69,6 +69,9 @@ strategy：指定新的Pod替换旧的Pod的策略， 支持两个属性：
 1. kubectl edit deploy nginx-deploy -n dev
 2. 修改spec.template.spec.containers.image
 
+##### 重建更新的结果
+
+![recreate_deployment](../asset/资源调度/deployment/recreate_deployment.png)
 
 #### 滚动更新
 1. kubectl edit deploy nginx-deploy -n dev
@@ -79,19 +82,25 @@ strategy：指定新的Pod替换旧的Pod的策略， 支持两个属性：
    
 ![rolling_update_deployment1](../asset/资源调度/deployment/rolling_update_deployment1.png)
 
+![rolling_update_deployment2](../asset/资源调度/deployment/rolling_update_deployment2.png)
+
 ##### 滚动更新的结果
 
-![rolling_update_deployment1](../asset/资源调度/deployment/rolling_update_deployment2.png)
-
+![rolling_update_deployment3](../asset/资源调度/deployment/rolling_update_deployment3.png)
 
 ### 回滚
 ```shell
 kubectl rollout status deploy nginx-deploy -n dev
-kubectl rollout undo deploy nginx-deploy --revision=2 -n dev
-kubectl rollout history deploy nginx-deploy --revision=3 -n dev
+  - 查看当前升级版本的状态
+kubectl rollout undo deploy nginx-deploy --to-revision=2 -n dev
+  - 回滚到指定版本
+kubectl rollout history deploy nginx-deploy -n dev
+  - 查看升级历史版本
 ```
 
+#### 回滚的结果
 
+![rollback_deployment](../asset/资源调度/deployment/rollback_deployment.png)
 
 ### 暂停与恢复
 把deploy先暂停下来，然后编辑deploy yaml，最后resume
@@ -100,8 +109,9 @@ kubectl rollout pause deploy nginx-deploy -n dev
 kubectl rollout resume deploy nginx-deploy -n dev
 ```
 
+#### 暂停与恢复的结果
 
-
+![pause_resume_deployment](../asset/资源调度/deployment/pause_resume_deployment.png)
 
 ## 配置信息
 
