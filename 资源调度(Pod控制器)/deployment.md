@@ -39,7 +39,7 @@ kubectl create -f nginx-deployment.yaml
    - CURRENT：当前的Pod数量
    - READY：可用的Pod数量
 
-![create_deployment](../asset/资源调度/deployment/create_deployment.png)
+![create deployment](../asset/资源调度/deployment/create_deployment.png)
 
 
 ### 扩容缩容
