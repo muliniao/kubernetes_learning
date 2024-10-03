@@ -81,7 +81,7 @@ strategy：指定新的Pod替换旧的Pod的策略， 支持两个属性：
 
 ##### 滚动更新的结果
 
-![rolling_update_deployment1](../asset/资源调度/deployment/rolling_update_deployment1.png)
+![rolling_update_deployment1](../asset/资源调度/deployment/rolling_update_deployment2.png)
 
 
 ### 回滚
